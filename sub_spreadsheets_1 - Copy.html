@@ -16,7 +16,7 @@ function SubForm (){
         type:'post',
         data:$("#myForm").serializeArray(),
         success: function(){
-          alert("Form Data Submitted :)")
+          alert("We got your details, Now complete the payment :)")
         },
         error: function(){
           alert("There was an error :(")
@@ -24,6 +24,8 @@ function SubForm (){
     });
 	
 	 document.getElementById("myForm").reset();
+	 document.getElementById("k").innerHTML="<h1> Now Complete the Payment </h1>";
+	 document.myForm.getElementById("1").innerHTML="<h1> Now Complete the Payment </h1>";
 }
 </script>
 </head>
@@ -79,5 +81,10 @@ function SubForm (){
 
   </form>
   &nbsp; &nbsp; <button onclick="SubForm()"> Submit</button>
+
+<p id="k"> </p>
+
+<form> <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_HkYDKCGSq35CuG" async> </form> 
+
 </body>
 </html>
