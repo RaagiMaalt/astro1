@@ -4,7 +4,7 @@
 <head>
 
 
-<title>Save Web Form Data to Spreadsheets - Contact Form</title>
+<title>Astrology Birth Details</title>
 <script
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
@@ -15,17 +15,16 @@ function SubForm (){
         url:'https://api.apispreadsheets.com/data/17506/',
         type:'post',
         data:$("#myForm").serializeArray(),
-        success: function(){
-          alert("We got your details, Now complete the payment :)")
-        },
+		success: function(){
+		 alert("Form Data Submitted :)")
+		   },
         error: function(){
           alert("There was an error :(")
         }
     });
+
 	
-	  location.href = "pay_for_astro.html";
-}
-	
+	 location.href = "pay_for_astro.html";
 }
 </script>
 </head>
@@ -37,7 +36,7 @@ function SubForm (){
     <input name="full_name" />
     <br/>
     
-<p id="1">Gender : &nbsp;
+<p id="1 name="Gender"">Gender : &nbsp;
 
 <br/>
     <input type="radio" id="Gender" name="Gender" value="Male" /> Male<br/>
@@ -80,11 +79,8 @@ function SubForm (){
 <textarea name="Questions" id="M" cols="30" rows="10"></textarea> </p>
 
   </form>
-  &nbsp; &nbsp; <button onclick="SubForm()"> Submit</button>
-
-<p id="k"> </p>
-
-<form> <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_HkYDKCGSq35CuG" async> </form> 
-
+  &nbsp; &nbsp; <button class="button" onclick="SubForm()"> Submit</button>
+  
+  <p id ="k"></p>
 </body>
 </html>
