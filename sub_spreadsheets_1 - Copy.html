@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+<title>Save Web Form Data to Spreadsheets - Contact Form</title>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<script>
+function SubForm (){
+    $.ajax({
+        url:'https://api.apispreadsheets.com/data/17506/',
+        type:'post',
+        data:$("#myForm").serializeArray(),
+        success: function(){
+          alert("Form Data Submitted :)")
+        },
+        error: function(){
+          alert("There was an error :(")
+        }
+    });
+	document.getElementById("myForm").reset();
+	 location.href = "pay_for_astro.html";
+}
+</script>
+</head>
+<body>
+  <form id="myForm">
+  <h1>  Shiva Astrology </h1>
+    <label>Your Name</label>
+    <br/>
+    <input name="full_name" />
+    <br/>
+    
+<p id="1">Gender : &nbsp;
+
+<br/>
+    <input type="radio" id="Gender" name="Gender" value="Male" /> Male<br/>
+    <input type="radio" id="Gender" name="Gender" value="Female" /> Female<br/>
+ </p>
+
+
+<p id="2"> Day : &nbsp;&nbsp;&nbsp;
+<input name="Day" /> </p>
+
+<p id="3">Month :
+ <input name="Month" /> </p>
+
+<p id="4"> Year : 
+<input type="number" name="Year" min="1900" max="2100" placeholder="YYYY" value="2021" > </p>
+
+
+
+
+<p id="5"> Hour 
+<input name="Hour" />
+</br> </br>
+ Minutes 
+<input name="Minutes" />
+</br>
+<input type="radio" id="Gender" name="AM/PM" value="AM" /> AM 
+    <input type="radio" id="Gender" name="AM/PM" value="PM" /> PM<br/>
+</p>
+
+<p id="6"> Country
+<input name="Country" />
+</p>
+
+<p id="7"> Place of Birth : 
+<input type="text" name="Place" > </p>
+
+
+<p id="M">
+<label>Your Questions : </label> <br>
+<textarea name="Questions" id="M" cols="30" rows="10"></textarea> </p>
+
+  </form>
+  &nbsp; &nbsp; <button class="button" onclick="SubForm()"> Submit</button>
+</body>
+</html>
